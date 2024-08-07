@@ -20,27 +20,6 @@ body {
   box-sizing: border-box;
 }
 
-.tombol-cover {
-  height: 100px;
-  margin: 20px;
-  background-color: #fff;
-  box-shadow: 0 10px 20px -8px #c5d6d6;
-  border-radius: 4px;
-}
-
-.tombol-cover:before {
-  counter-increment: tombol-counter;
-  content: counter(tombol-counter);
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  color: #d7e3e3;
-  font-size: 12px;
-  line-height: 1;
-  padding: 5px;
-}
-
-.tombol-cover,
 .kenop,
 .lapisan {
   position: absolute;
