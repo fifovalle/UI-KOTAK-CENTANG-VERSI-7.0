@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0f0e17;
+}
+
+.wadah {
+  display: table-cell;
+  position: relative;
+  width: 200px;
+  height: 140px;
+  box-sizing: border-box;
+}
+
+.tombol-cover {
+  height: 100px;
+  margin: 20px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px -8px #c5d6d6;
+  border-radius: 4px;
+}
+
+.tombol-cover:before {
+  counter-increment: tombol-counter;
+  content: counter(tombol-counter);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #d7e3e3;
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px;
+}
+
+.tombol-cover,
+.kenop,
+.lapisan {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.tombol {
+  position: relative;
+  top: 50%;
+  width: 74px;
+  height: 36px;
+  margin: -20px auto 0 auto;
+  overflow: hidden;
+}
+
+.kotakCentang {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.kenop {
+  z-index: 2;
+}
+
+.lapisan {
+  width: 100%;
+  background-color: #ebf7fc;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.tombol.r,
+.tombol.r .lapisan {
+  border-radius: 100px;
+}
+
+#tombol-3 .kenop:before {
+  content: "P";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 10px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+}
+
+#tombol-3 .kotakCentang:active + .kenop:before {
+  width: 46px;
+  border-radius: 100px;
+}
+
+#tombol-3 .kotakCentang:checked:active + .kenop:before {
+  margin-left: -26px;
+}
+
+#tombol-3 .kotakCentang:checked + .kenop:before {
+  content: "UY";
+  left: 42px;
+  background-color: #f44336;
+}
+
+#tombol-3 .kotakCentang:checked ~ .lapisan {
+  background-color: #fcebeb;
+}
